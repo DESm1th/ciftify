@@ -183,7 +183,8 @@ class TestSettings(unittest.TestCase):
                  '--fs-subjects-dir' : '/somepath/pipelines/freesurfer',
                  '--resample-LowRestoNative' : False,
                  '<Subject>' : 'STUDY_SITE_ID_01',
-                 '--settings-yaml' : None}
+                 '--settings-yaml' : None,
+                 '--T2': False}
 
     yaml_config = {'high_res' : "164",
             'low_res' : ["32"],
