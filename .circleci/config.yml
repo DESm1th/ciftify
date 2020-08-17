@@ -189,6 +189,8 @@ workflows:
             - test-py37
             # - test-py38
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v?[0-9]+\.[0-9]+\.[0-9]+(-[0-9]+|-alpha|-beta)?$/
       - test_and_deploy_pypi:
@@ -198,5 +200,7 @@ workflows:
             - test-py37
             # - test-py38
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v?[0-9]+\.[0-9]+\.[0-9]+(-[0-9]+|-alpha|-beta)?$/
