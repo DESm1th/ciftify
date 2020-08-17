@@ -169,7 +169,7 @@ workflows:
       - test-py35
       - test-py36
       - test-py37
-      - test-py38
+      # - test-py38
       - test_and_deploy_docker:
           requires:
             - test-py35
@@ -177,10 +177,8 @@ workflows:
             - test-py37
             # - test-py38
           filters:
-            branches:
-              ignore: /.*/
             tags:
-              only: /^[0-9]\.[0-9]\.[0-9](-[0-9]+|-alpha|-beta)?$/
+              only: /^v?[0-9]+\.[0-9]+\.[0-9]+(-[0-9]+|-alpha|-beta)?$/
       - test_and_deploy_pypi:
           requires:
             - test-py35
@@ -188,7 +186,5 @@ workflows:
             - test-py37
             # - test-py38
           filters:
-            branches:
-              ignore: /.*/
             tags:
-              only: /^[0-9]\.[0-9]\.[0-9](-[0-9]+|-alpha|-beta)?$/
+              only: /^v?[0-9]+\.[0-9]+\.[0-9]+(-[0-9]+|-alpha|-beta)?$/
